@@ -1,0 +1,388 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #e3f2fd;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  /* justify-content: center;
+  align-items: center; */
+  height: 100vh;
+  flex-direction: column;
+  text-align: center;
+}
+
+
+.button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 15px;
+  font-size: 1rem;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+}
+
+button {
+  background-color: #1565c0;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #0d47a1;
+}
+
+form {
+  background-color: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  width: 350px;
+  margin-left:460px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+input, select {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 15px auto;
+
+  width: 320px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card-title {
+  font-size: 1.6rem;
+  color: #333;
+  font-weight: bold;
+}
+
+.card-text p {
+  margin: 5px 0;
+  font-size: 1rem;
+  color: #666;
+}
+
+/* .mt-4 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+} */
+
+/* Center the Add Child card */
+.add-child-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+
+.h1{
+  margin-left: 100px;
+}
+
+
+
+
+.text{
+margin-right: 180px;
+color: white;
+font-size: larger;
+}
+
+/* Navbar Styling */
+.navbar {
+  background: blue ; /* Transparent background */
+  backdrop-filter: blur(10px); /* Glass effect */
+  border-radius: 12px;
+  padding: 15px 20px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Navbar Brand */
+.navbar-brand {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff !important;
+  transition: transform 0.3s ease-in-out;
+}
+
+.navbar-brand:hover {
+  transform: scale(1.1);
+}
+
+/* Navbar Links */
+.navbar-nav .nav-link {
+  font-size: 18px;
+  font-weight: 500;
+  color: #ffffff !important;
+  margin: 0 12px;
+  padding: 8px 15px;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hover effect for Navbar Links */
+.navbar-nav .nav-link:hover {
+  background:white;
+  color: rgb(47, 0, 255) !important;
+}
+
+/* Navbar Toggle Button */
+.navbar-toggler {
+  border: none;
+  outline: none;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 8px 10px;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar-toggler:hover {
+  background: rgba(255, 255, 255, 0.4);
+  
+}
+
+/* Responsive Design */
+@media (max-width: 991px) {
+  .navbar {
+      background: rgba(255, 255, 255, 0.15);
+  }
+
+  .navbar-nav {
+      text-align: center;
+  }
+
+  .navbar-nav .nav-link {
+      margin: 10px 0;
+      display: block;
+  }
+}
+
+
+/* --------------- */
+
+/* Food.css */
+
+/* Navbar Styling */
+.navbar {
+  background-color: #61cdff !important; /* Attractive color */
+}
+
+.navbar-nav .nav-link {
+  color: white !important;
+  font-weight: bold;
+  padding: 10px 15px;
+}
+
+.navbar-nav .nav-link:hover {
+  background-color: #f4f8f8;
+  border-radius: 5px;
+}
+
+/* ------About--------- */
+
+/* About Page Styles */
+.about-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h1 {
+  color: #2c3e50;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+h2 {
+  color: #34495e;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+h4 {
+  color: #27ae60;
+  font-size: 1.5rem;
+  margin-top: 20px;
+  border-left: 5px solid #27ae60;
+  padding-left: 12px;
+  font-weight: 600;
+}
+
+p, ul {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #34495e;
+  text-align: justify;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul li {
+  margin-bottom: 12px;
+  position: relative;
+  padding-left: 30px;
+  font-size: 1rem;
+}
+
+ul li::before {
+  content: '\2713'; /* Checkmark icon */
+  color: #27ae60;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  top: 2px;
+  font-size: 1.2rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.about-container ul li strong {
+  color: #e74c3c;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-container {
+      padding: 20px;
+  }
+  h1 {
+      font-size: 2rem;
+  }
+  h2 {
+      font-size: 1.75rem;
+  }
+  h4 {
+      font-size: 1.3rem;
+  }
+  p, ul {
+      font-size: 14px;
+  }
+  ul li::before {
+      font-size: 1rem;
+  }
+}
+
+
+
+/* ------Food------- */
+
+
+.food-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  gap: 20px;
+  padding: 20px;
+  justify-content: center;
+}
+
+.food-card {
+  width: 100%;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  background-color: #fff;
+  padding: 10px;
+}
+
+.food-card:hover {
+  transform: scale(1.05);
+}
+
+.food-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.qty-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.qty-count {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.veg-checkbox {
+  font-size: 18px;
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .food-container {
+      grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .food-container {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .food-container {
+      grid-template-columns: repeat(1, 1fr);
+  }
+}
