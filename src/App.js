@@ -23,6 +23,9 @@ function App() {
       <Route path='/about' element={<><NavigationBar/><About/></>}></Route>
 
       <Route path='/food' element={<><NavigationBar/><Food/></>}></Route>
+
+
+
       
      </Routes>
      

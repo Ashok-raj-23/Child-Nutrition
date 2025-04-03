@@ -1,7 +1,13 @@
 import { Navbar, Nav, Container } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const NavigationBar = () => {
+    const nav = useNavigate()
+    const handlelogout=()=>{
+         localStorage.clear("parentid")
+         alert("Logged out successfully !")
+         nav('/')
+     }
     return (
         <Navbar expand="lg" className="bg-primary navbar-dark py-3 shadow-sm">
             <Container>
@@ -29,7 +35,7 @@ const NavigationBar = () => {
                         <Nav.Link as={Link} to="/Food" className="text-white fs-5 mx-3">
                            Food
                         </Nav.Link>
-                        <Nav.Link as={Link} to="/logout" className="text-white fs-5 mx-3">
+                        <Nav.Link as={Link} to="/logout" className="text-white fs-5 mx-3" onClick={handlelogout}>
                            Logout
                         </Nav.Link>
                        

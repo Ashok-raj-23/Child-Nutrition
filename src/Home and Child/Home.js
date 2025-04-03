@@ -28,13 +28,19 @@ function Home() {
      const [editchild ,seteditchild] = useState(null) 
      const [report , setreport] = useState([])
      let nav = useNavigate()
+     let parent = localStorage.getItem("parentId");
+     let parentId = JSON.parse(parent)
+     console.log(parentId);
+     let childId = {...child,userid:parentId._id}
 
-
+ 
+    
         const handlechange=(e)=>{
           e.preventDefault();
           setchild({...child,[e.target.name]:e.target.value})
         }
-    
+      
+
     const handlenewchild=()=>{
      setaddchild(!addchild);
      setedit(false);
@@ -53,22 +59,16 @@ function Home() {
 
       },[child?.weight,child?.height])
 
-
-      let parent= localStorage.getItem("parentid")
-      console.log(parent);
-      
-      let parentid= JSON.parse(parent)
-      console.log(parentid);
-      let childData ={ ...child, userid:parentid._id}
     
-
+      
+      
       
     function handlesubmit(e){
       e.preventDefault()
 
    
       if(edit){
-        axios.post('http://92.205.109.210:8037/api/updatebyidchild',{id:editchild,...childData})
+        axios.post('http://92.205.109.210:8037/api/updatebyidchild',{id:editchild,...childId})
         .then(res=>{
             console.log("Updating Child ID:",editchild);
             setedit(false);
@@ -78,7 +78,7 @@ function Home() {
         })
 
       }else{
-        axios.post('http://92.205.109.210:8037/api/createchild',childData)
+        axios.post('http://92.205.109.210:8037/api/createchild',childId)
         .then(res=>{
         console.log("Created...",res.data)
         setchildren([...children, res.data.data]);
@@ -158,9 +158,23 @@ function newtrientschild(childData){
 
 
 
-function handleNutrition(childId){
-  console.log(childId);
-  nav('/food')
+function handleNutrition(childData){
+  axios.post('http://92.205.109.210:8037/report/getall',{Age: childData.age,Gender:childData.gender,
+    bmiRange:childData.bmi
+
+  })
+  .then(res=>{
+    console.log(res.data);
+    let list = res.data.data
+    console.log(list);
+    let childId = child._id
+    let childNutrition= {
+      childId:child._id,
+      ...list
+    }
+ 
+  nav('/food',{state:childNutrition})
+})
 
 }
 
@@ -168,7 +182,7 @@ function handleNutrition(childId){
     <div>
          
    
-<button  onClick={handlenewchild}>{addchild ? 'close form':'Add Child'}</button>
+<button  onClick={handlenewchild}>{addchild ? 'Close ':'Add Child'}</button>
 {addchild && (
 <form onSubmit={handlesubmit}>
 <h1>Child Details</h1>
@@ -202,7 +216,7 @@ function handleNutrition(childId){
                                 </Card.Text>
                                 <Button variant="primary" onClick={()=>handleEdit(child)}>Edit</Button>
                                 <Button onClick={()=>newtrientschild(child)}>Foodlists</Button>
-                                <Button onClick={()=>handleNutrition(child._id)}>Add Nutrition</Button>
+                                <Button onClick={()=>handleNutrition(child)}>Add Nutrition</Button>
                             </Card.Body>
                         </Card>
                     ))}

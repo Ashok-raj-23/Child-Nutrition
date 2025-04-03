@@ -2,6 +2,8 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Swal from 'sweetalert2'
+import { auth,provider } from './Firebaseconfig';
+import { signInWithPopup } from 'firebase/auth';
 
 function Login() {
   const nav = useNavigate()
@@ -38,8 +40,17 @@ const [userid,setuserid] = useState({
    const handlesignup=()=>{
     nav('/signup')
    }
-
-
+   
+const handleGoogleLogin = async () => {
+  try {
+    const result = await signInWithPopup(auth, provider);
+    console.log("User:", result.user);
+    localStorage.setItem("user", JSON.stringify(result.user));
+    nav("/home");
+  } catch (error) {
+    console.error("Error signing in:", error);
+  }
+};
   return (
     <div>Login
       <form onSubmit={handlesubmit}>
@@ -49,6 +60,7 @@ const [userid,setuserid] = useState({
      <button onClick={handlesignup}>Signup</button>
 
       </form>
+      <button onClick={handleGoogleLogin}>Login With Google</button>
 
     </div>
   )
